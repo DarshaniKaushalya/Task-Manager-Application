@@ -1,0 +1,8 @@
+<div class="warning-popup" [ngClass]="{'show': showDeleteConfirmation}">
+    <div class="warning-popup-content">
+      <p>Do you want to delete the task??</p>
+      <button class="btn btn-danger" (click)="deleteTask(taskDetails.id)">Yes</button>
+      <button class="btn btn-secondary" (click)="cancelDelete()">No</button>
+    </div>
+  </div>
+  

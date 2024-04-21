@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="mb-3" *ngIf="isUpdateMode">Update Task</h1>
+    <h1 class="mb-3" *ngIf="!isUpdateMode">Add New Task</h1>
+    <div class="row">
+        <div class="col-6">
+          <form [formGroup] = "addForm"  (ngSubmit)="isUpdateMode ? updateTask() : addTasks()">
+            <div *ngIf="isUpdateMode" class="mb-3">
+                <label for="Id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="Id" readonly [(ngModel)]="taskDetails.id" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" formControlName="title" [(ngModel)]="addTaskRequest.title" required>
+              <div *ngIf = "submitted && addtaskerror" class="error-class">Title fields required</div>
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="description" formControlName="description" [(ngModel)]="addTaskRequest.description"> 
+                  <div *ngIf = "submitted && addtaskerror" class="error-class">Description fields required</div>
+                </div>
+                <div class="mb-3">
+                  <label for="dueDate" class="form-label">Due Date</label>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date" id="dueDate" formControlName="dueDate"
+                        [(ngModel)]="addTaskRequest.dueDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </div>
+  
+              <button type="submit" class="btn btn-primary">
+                {{ isUpdateMode ? 'Update' : 'Add' }}
+              </button>
+            </form>
+        </div>
+    </div>
+  </div>
+  

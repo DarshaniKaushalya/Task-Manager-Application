@@ -1,0 +1,25 @@
+/* styles.css */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .warning-popup {
+    background-color: #fff; /* Set your preferred background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Optionally, add some styling for buttons */
+  .btn {
+    margin: 5px;
+  }
+  
+  /* Add more styling as needed */
+  

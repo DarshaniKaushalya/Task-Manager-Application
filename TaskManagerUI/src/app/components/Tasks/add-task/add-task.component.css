@@ -1,0 +1,11 @@
+.mat-datepicker-content {
+    max-width: none; 
+  }
+  
+  .mat-calendar {
+    max-width: none;
+  }
+  .error-class{
+    color:red;
+    font-size:small;
+  }

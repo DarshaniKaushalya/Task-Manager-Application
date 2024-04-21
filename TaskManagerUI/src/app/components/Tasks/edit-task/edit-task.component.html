@@ -1,0 +1,39 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit Task</h1>
+    <div class="row">
+<div class="col-6">
+    <form #form="ngForm" (ngSubmit) = "UpdateTask()">
+        <div class="mb-3">
+            <label for="Id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="Id" readonly [(ngModel)]="taskDetails.id" [ngModelOptions]="{standalone: true}">
+          </div>
+        <div class="mb-3">
+            <label for="Title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" [(ngModel)]="taskDetails.title">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Discription</label>
+            <input type="text" class="form-control" id="description" name="description" [(ngModel)]="taskDetails.description"> 
+          </div>
+          <!-- <div class="mb-3">
+            <label for="salary" class="form-label">Due Date</label>
+            <input type="datetime" class="form-control" id="dueDate" name="dueDate" [(ngModel)]="addTaskRequest.dueDate">
+          </div> -->
+          <div class="mb-3">
+            <label for="dueDate" class="form-label">Due Date</label>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" id="dueDate" name="dueDate"
+                   [(ngModel)]="taskDetails.dueDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </div>
+
+        <button type="submit" class="btn btn-primary mr-5">Save</button>
+        <button type="submit" class="btn btn-danger" (click) = "deleteTask(taskDetails.id)">Delete</button>
+      </form>
+      </div>
+    </div>
+
+
+</div>
+
+
